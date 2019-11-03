@@ -83,15 +83,16 @@ git clone https://github.com/ycahome/pp-manager.git /src/domoticz/plugins/pp-man
 pip3 install -U ouimeaux && \
 
 # remove git and tmp dirs
-#apt-get remove -y cmake linux-headers-amd64 build-essential libssl-dev libboost-dev libboost-thread-dev libboost-system-dev libsqlite3-dev libcurl4-openssl-dev libusb-dev zlib1g-dev libudev-dev && \
-#   apt-get autoremove -y && \ 
-#   apt-get clean && \
-#   rm -rf /var/lib/apt/lists/*
+apt-get remove -y cmake linux-headers-amd64 build-essential libssl-dev libboost-dev libboost-thread-dev libboost-system-dev libsqlite3-dev libcurl4-openssl-dev libusb-dev zlib1g-dev libudev-dev && \
+   apt-get autoremove -y && \ 
+   apt-get clean && \
+   rm -rf /var/lib/apt/lists/*
 
 
 VOLUME /config
 
-EXPOSE 8080
+EXPOSE 8089
+
 
 COPY start.sh /start.sh
 
