@@ -3,7 +3,7 @@ MAINTAINER Josh Cox <josh 'at' webhosting.coop>
 
 ENV MKDOMOTICZ_UPDATED=20190316
 
-ARG DOMOTICZ_VERSION="master"
+ARG DOMOTICZ_VERSION="development"
 
 # install packages
 RUN apt-get update && apt-get install -y \
@@ -44,7 +44,8 @@ make && \
 # install -m 0555 domoticz /usr/local/bin/domoticz && \
 cd /tmp && \
 # Cleanup
-# rm -Rf /src/domoticz && \
+# rm -Rf /src/domoticz && 
+git clone https://github.com/ycahome/pp-manager.git src/domoticz/plugins/pp-manager
 
 # ouimeaux
 pip3 install -U ouimeaux && \
